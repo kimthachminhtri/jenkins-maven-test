@@ -1,20 +1,30 @@
+/**
+ * Converts numeric scores into letter grades.
+ */
+public final class GradeConverter {
 
-public class GradeConverter {
-    public String convert(int score) {
-        if (score <= 100 && score >= 90) {
+    private static final int GRADE_A_MIN = 90;
+    private static final int GRADE_B_MIN = 80;
+    private static final int GRADE_C_MIN = 70;
+    private static final int GRADE_D_MIN = 60;
+
+    /**
+     * Converts a numeric score to a letter grade.
+     *
+     * @param score the score to convert
+     * @return the corresponding letter grade
+     */
+    public static String convert(final int score) {
+        if (score >= GRADE_A_MIN) {
             return "A";
-        } else if (score <= 89 && score >= 80) {
+        } else if (score >= GRADE_B_MIN) {
             return "B";
-        } else if (score <= 79 && score >= 70) {
+        } else if (score >= GRADE_C_MIN) {
             return "C";
-        } else if (score <= 69 && score >= 60) {
+        } else if (score >= GRADE_D_MIN) {
             return "D";
-        } else if (score <= 59 && score >= 0) {
-            return "E";
         } else {
-            return "Invalid";
+            return "E";
         }
     }
-
-
 }
